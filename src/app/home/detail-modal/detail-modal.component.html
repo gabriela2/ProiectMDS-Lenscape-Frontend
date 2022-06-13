@@ -1,0 +1,48 @@
+<div bsModal class=" row modal fade" #detailModal="bs-modal" tabindex="-1" style="margin-top:200px;">
+  <div class="col-md-6 col-sm-6 col-lg-8 mx-auto my-4" id="modal">
+
+    <div class="container col-lg-12">
+      <div class="row">
+
+        <div class="col-lg-4" style="padding-right:0">
+          <img [src]="echipament.img" class="img-fluid z-depth-1 rounded">
+        </div>
+   
+      <div class="col-lg-8" style="padding-left:10px">
+        <div class="row">
+          <div class="details">
+          <p *ngFor = "let categorie of echipament.numeCategorie" > {{categorie}} </p><br>
+          <p> -{{echipament.numeEchipament}}</p><br>
+          <p id="producator">-producator: {{producator}}</p><br>
+          <p >-pret: {{echipament.pret}} RON</p><br>
+          <p >-specificatii: {{echipament.specificatii}}</p><br>
+
+          <ol>
+            <li *ngFor = "let magazin of echipament.nume"> {{magazin}} </li>
+            <!--<li *ngFor = "let stoc of magazinechipament.stoc"> {{stoc}}</li>-->
+          </ol>
+
+        </div>
+        </div>
+        <div class="row">
+          <div class="button">
+       
+          <button  type="button" class="btn btn-dark" (click)="addToCart(echipament)">Add to cart</button>
+         
+        </div>
+        </div>
+      </div>
+
+
+      </div>
+    </div>
+
+
+
+</div>
+
+
+  </div>
+
+
+

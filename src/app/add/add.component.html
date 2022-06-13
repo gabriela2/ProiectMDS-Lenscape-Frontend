@@ -1,0 +1,76 @@
+<body> 
+      <h1 style="color: white;">Add page</h1>
+<div class="container">
+
+<div id="text">
+  <p style="display: inline; margin-right: 10px; ">Add new</p>
+  <div *ngFor="let option of options" style="display: inline; margin-left:10px; ">
+       <input type="radio" name="option" [value]="option" (change)="radioChange($event)" checked="checked"><i>{{option}}</i>
+  </div>
+</div>
+
+<div class="form-container border ">
+
+  <form class="text-center " [formGroup]="addMagazinForm"  *ngIf="selectedOption === 'Magazin'">
+
+    <input type="text"  class="form-control mb-4" placeholder="Nume" formControlName="nume"
+       autocomplete="off"   >
+
+    <input type="text"  class="form-control mb-4" placeholder="Adresa" formControlName="adresa"
+         autocomplete="off"  >
+  </form>
+
+
+
+  <form class="text-center  " [formGroup]="addCategorieForm" *ngIf="selectedOption === 'Categorie'">
+
+    <input type="text"  class="form-control mb-4" placeholder="Nume Categorie" formControlName="numeCategorie"
+         autocomplete="off" >
+
+    <input type="text"  class="form-control mb-4" placeholder="Specificatii" formControlName="specificatii"
+          autocomplete="off" >
+      
+    <input type="text"  class="form-control mb-4" placeholder="Descriere" formControlName="descriere"
+          autocomplete="off" >
+  </form>
+
+
+  
+
+  <form class="text-center  " [formGroup]="addEchipamentForm"  *ngIf="selectedOption === 'Echipament'">
+
+    <input type="text"  class="form-control mb-4" placeholder="Nume Echipament" formControlName="numeEchipament"
+         autocomplete="off" >
+
+    <input type="text"  class="form-control mb-4" placeholder="Descriere" formControlName="descriere"
+          autocomplete="off" >
+
+    <input type="text"  class="form-control mb-4" placeholder="Specificatii" formControlName="specificatii"
+          autocomplete="off" >
+
+
+    <input type="number"  class="form-control mb-4" placeholder="ProducatorID" formControlName="producatorId"
+          autocomplete="off" >
+
+    <input type="number"  class="form-control mb-4" placeholder="Pret" formControlName="pret"
+          autocomplete="off" >
+
+    <input type="number"  class="form-control mb-4" placeholder="An Aparitie" formControlName="anAparitie"
+          autocomplete="off" >
+
+    <input type="text"  class="form-control mb-4" placeholder="CategorieId1, CategorieId2" formControlName="categorieId"
+          autocomplete="off" >
+
+    <input type="text"  class="form-control mb-4" placeholder="MagazinId1, MagazinId2" formControlName="magazinId"
+          autocomplete="off" >
+    <input type="text"  class="form-control novalidate mb-4" placeholder="Img URL" formControlName="img"
+           autocomplete="off">
+  </form>
+  <button mdbBtn color="danger" block="true"  type="submit" (click)="add()" [disabled]="currentFormRef.invalid" >Add</button>
+    <p *ngIf="success" style="color: green; font-size: 22px;">{{selectedOption.toUpperCase()}} added successfully</p>
+    <p *ngIf="success === false" style="color: red; font-size: 22px;">Something went wrong</p>
+</div>
+</div>
+
+</body>
+

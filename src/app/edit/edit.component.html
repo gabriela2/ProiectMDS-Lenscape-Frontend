@@ -1,0 +1,138 @@
+<body> 
+  <h1>Edit page</h1>
+<div class="container">
+  <div class="echipaments">
+  <p>Echipamente</p>
+  <table class="table table-striped ">
+    <thead>
+    <tr>
+      <th scope="col" style="width:10%">ID</th>
+      <th scope="col" style="width:20%">Nume Echipament</th>
+      <th scope="col" style="width:10%">Descriere</th>
+      <th scope="col" style="width:10%">Specificatii</th>
+      <th scope="col" style="width:10%">ProducatorId</th>
+      <th scope="col" style="width:10%">Pret</th>
+      <th scope="col" style="width:10%">Anul Aparitiei</th>
+      <th scope="col" style="width:20%">NumeCategorie</th>
+      <th scope="col" style="width:20%">NumeMagazin</th>
+      <th scope="col" style="width:10%">Actions</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let echipament of echipaments;let i=index">
+      <th scope="row">{{echipament.id}}</th>
+      <td>{{echipament.numeEchipament}}</td>
+      <td>{{echipament.descriere}}</td>
+      <td>{{echipament.specificatii}}</td>
+      <td>{{echipament.producatorId}}</td>
+      <td>{{echipament.pret}}</td>
+      <td>{{echipament.anAparitie}}</td>
+      <td>{{echipament.numeCategorie}}</td>
+      <td>{{echipament.nume}}</td>
+      <td><a class=" dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+             aria-haspopup="true" aria-expanded="false"></a>
+
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" (click)="showM1(echipament.id)"><i class="fas fa-pen"></i> Edit</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" (click)="deleteEchipament(echipament.id)"><i class="fas fa-eraser"></i> Delete</a>
+        </div>
+      </td>
+
+
+    </tr>
+
+
+    </tbody>
+  </table>
+
+  </div>
+
+
+
+  <div class="categorie">
+    <p>Categorii</p>
+    <table class="table table-striped ">
+      <thead>
+      <tr>
+        <th scope="col" style="width:10%">ID</th>
+        <th scope="col" style="width:30%">Nume Categorie</th>
+        <th scope="col" style="width:20%">Specificatii</th>
+        <th scope="col" style="width:20%">Descriere</th>
+        <th scope="col" style="width:10%">Actions</th>
+
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let categorie of categories;let i=index">
+        <th scope="row">{{categorie.id}}</th>
+        <td>{{categorie.numeCategorie}}</td>
+        <td>{{categorie.specificatii}}</td>
+        <td>{{categorie.descriere}}</td>
+
+        <td><a class=" dropdown-toggle"  id="navbarDropdown2" role="button" data-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false"></a>
+
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown2">
+            <a class="dropdown-item" (click)="showM2(categorie.id)"><i class="fas fa-pen"></i> Edit</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" (click)="deleteCategorie(categorie.id)" ><i class="fas fa-eraser"></i> Delete</a>
+          </div>
+        </td>
+
+
+      </tr>
+
+
+      </tbody>
+    </table>
+
+  </div>
+
+
+  <div class="magazin">
+    <p>Magazine</p>
+    <table class="table table-striped " >
+      <thead>
+      <tr>
+        <th scope="col" style="width:10%">ID</th>
+        <th scope="col" style="width:30%">Nume</th>
+        <th scope="col" style="width:30%">Adresa</th>
+        <th scope="col" style="width:10%">Actions</th>
+
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let magazin of magazins;let i=index">
+        <th scope="row">{{magazin.id}}</th>
+        <td>{{magazin.nume}}</td>
+        <td>{{magazin.adresa}}</td>
+
+
+        <td><a class=" dropdown-toggle" id="navbarDropdown3" role="button" data-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false"></a>
+
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown3">
+            <a class="dropdown-item" (click)="showM3(magazin.id)"><i class="fas fa-pen"></i> Edit</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" (click)="deleteMagazin(magazin.id)"><i class="fas fa-eraser"></i> Delete</a>
+          </div>
+        </td>
+
+
+      </tr>
+
+
+      </tbody>
+    </table>
+
+  </div>
+
+
+</div>
+<app-edit-echipament-modal #editEchipamentModal (change)="onEditFinished($event)" ></app-edit-echipament-modal>
+<app-edit-magazin-modal #editMagazinModal (change)="onEditFinished($event)" ></app-edit-magazin-modal>
+<app-edit-categorie-modal #editCategorieModal (change)="onEditFinished($event)" ></app-edit-categorie-modal>
+
+</body>

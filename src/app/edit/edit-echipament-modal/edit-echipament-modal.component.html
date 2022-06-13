@@ -1,0 +1,52 @@
+<div bsModal class=" row modal fade" #editEchipamentModal="bs-modal" tabindex="-1" role="dialog" aria-labelledby="editEchipamentModal"
+     aria-hidden="true" (onHide)=" this.editEchipamentForm.reset();">
+  <div class="col-md-6 col-sm-6 col-lg-4 mx-auto my-4" *ngIf="editEchipamentForm">
+
+
+    <form class="text-center border border-light p-5" [formGroup]="editEchipamentForm">
+
+      <p class="h4 mb-4">Edit Echipament</p>
+
+      <label for="name">Nume Echipament</label>
+      <input type="text"  id="numeEchipament" class="form-control mb-4"   formControlName="numeEchipament" autocomplete="off" >
+
+      <label for="descriere" >Descriere</label>
+      <input type="text" id="descriere" class="form-control mb-4" formControlName="descriere" autocomplete="off" >
+
+      <label for="specificatii" >Specificatii</label>
+      <input type="text" id="Specificatii" class="form-control mb-4" formControlName="specificatii" autocomplete="off" >
+
+      <label for="producatorId">ProducatorId</label>
+      <input type="number" id="producatorId"  class="form-control mb-4" formControlName="producatorId" autocomplete="off" >
+
+      <label for="pret">Pret</label>
+      <input type="number" id="pret"  class="form-control mb-4" formControlName="pret" autocomplete="off" >
+
+      <label for="anAparitie">AnAparitie</label>
+      <input type="date" id="anAparitie"  class="form-control mb-4" formControlName="anAparitie" autocomplete="off" >
+
+      <label for="categorie">Add categorii id's *</label>
+      <input type="text" id="categorie" class="form-control mb-4" placeholder='CategorieId1, CategorieId2' formControlName="categorieId" autocomplete="off" >
+
+      <label for="magazin">Add magazine id's *</label>
+      <input type="text" id="magazin" class="form-control mb-4" placeholder='MagazinId1, MagazinId2' formControlName="magazinId" autocomplete="off" >
+
+      <label for="img">Img URL</label>
+      <input type="text" id="img" class="form-control novalidate mb-4"  formControlName="img" autocomplete="off" >
+
+
+
+      <button mdbBtn color="danger" block="true" class="my-4"  [disabled]="!this.editEchipamentForm.valid || this.editEchipamentForm.pristine" (click)='editEchipament()'>Edit</button>
+
+
+
+
+
+
+
+    </form>
+
+  </div>
+</div>
+
+

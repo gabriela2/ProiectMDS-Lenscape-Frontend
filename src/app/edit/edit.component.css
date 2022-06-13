@@ -1,0 +1,28 @@
+.table {
+  width: 70%;
+  margin: 20px;
+  background-color: white;
+}
+
+body{
+  background-image: url("https://i.pinimg.com/originals/3b/46/63/3b466321c912bd8f93c8feb00ece75de.jpg");
+}
+
+.container {
+  padding: 30px;
+  padding-left: 100px;
+  
+}
+
+p {
+  font-size: 25px;
+  margin-left: 20px;
+  color: white;
+}
+
+h1 {
+  margin-left: 30px;
+  margin-top: 20px;
+  font-weight: 500;
+  color: white;
+}

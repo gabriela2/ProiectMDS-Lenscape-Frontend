@@ -1,0 +1,53 @@
+<nav class="navbar-sus">
+  <a routerLink="/" class="navbar-brand">
+    <h2 class="nav-link">Lenscape</h2>
+  </a>
+
+  <div>
+    <ul class="nav navbar">
+      <li>
+        <a
+          class="nav-link"
+           (click)="openCart()" 
+               
+        >
+          <i class="fas fa-shopping-cart"></i>
+        </a>
+      </li>
+      
+       <li class="nav-item" routerLinkActive="active-page">
+        <a class="nav-link" routerLink="/add">
+          <i class="fas fa-plus-circle"></i>
+        </a>
+      </li>
+
+      <li class="nav-item" routerLinkActive="active-page">
+        <a class="nav-link" routerLink="/edit">
+          <i class="fas fa-edit"></i>
+        </a>
+      </li>
+      
+
+      <li class="nav-item" routerLinkActive="active-page">
+        <a class="nav-link" routerLink="/contact">
+          <i class="fas fa-mobile-alt"></i>
+        </a>
+      </li>
+
+      <li class="nav-item" routerLinkActive="active-page">
+        <a class="nav-link" routerLink="/magazine">
+          <i class="fas fa-store-alt"></i>
+        </a>
+      </li>
+
+      <li class="nav-item" routerLinkActive="active-page">
+        <a class="nav-link" href="https://www.flipsnack.com/andreeavoicu/lenscape.html">
+          <i class="fas fa-book-open"></i>
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+
+</nav>
+<app-cart-modal #cartModal></app-cart-modal>

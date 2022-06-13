@@ -1,0 +1,49 @@
+h1 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-weight: 400;
+  text-align: center;
+}
+
+body{
+  background-image: url("https://i.pinimg.com/originals/3b/46/63/3b466321c912bd8f93c8feb00ece75de.jpg");
+}
+
+.container {
+  padding-bottom: 20px;
+}
+
+#text {
+    font-size: 25px;
+    border: 1px solid #dee2e6;
+    text-align: center;
+    width: 30%;
+    margin: auto;
+    border-bottom: none;
+    padding-top: 5px;
+    background-color: white;
+}
+
+input[type='radio'] {
+  transform: scale(1.5);
+  margin-right: 5px;
+}
+
+.form-container {
+  max-width: 30%;
+  text-align: center;
+  margin: auto;
+  border-top-color: white !important;
+  padding-bottom: 3rem;
+  background-color: white;
+}
+
+button.btn.btn-block {
+  width: 40%;
+  margin: auto;
+}
+
+form {
+      padding: 3rem;
+    padding-bottom: 0;
+}
